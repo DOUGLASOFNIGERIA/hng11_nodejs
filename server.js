@@ -9,15 +9,15 @@ app.get('/api/hello', async(req, res) => {
 
     //Get the client's IP address
     const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    const location = 'New York';
-    const temperature = 11;
+    //const location = 'New York';
 
     //Use a third-party service to get the location and temperature
 
     try {
-        //const locationResponse = await axios.get('https://ipapi.co/${clientIp}/json/');
-        //const locationData = locationResponse.data;
-        //const city = locationData.city;
+        const locationResponse = await axios.get('https://ipapi.co/${clientIp}/json/');
+        const locationData = locationResponse.data;
+        const city = locationData.city;
+        const temperature = 11;
 
         //const weatherResponse = await axios.get('https://api.open-meteo.com/v1/forecast?latitude=${locationData.latitude}&longitude=${locationData.lomgtitude}&current_weather=true')
         //const weatherData = weatherResponse.data.current_weather;
