@@ -20,7 +20,7 @@ app.get('/api/hello', async (req, res) => {
         await ipinfo(clientIp)
     };
 
-    const city = ipInfoResponse.city || 'unknown location';
+    const city = ipInfoResponse.city || 'New York';
 
 
     try {
